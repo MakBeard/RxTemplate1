@@ -9,6 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.jollydroid.rxtemplate1.db.DbOpenHelper;
+import com.jollydroid.rxtemplate1.model.DataModel;
+import com.pushtorefresh.storio.sqlite.impl.DefaultStorIOSQLite;
+import com.pushtorefresh.storio.sqlite.queries.Query;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -32,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private DefaultStorIOSQLite mDefaultStorIOSQLite;
+    private DbOpenHelper sqLiteOpenHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         ButterKnife.bind(this);
 
         presenter = new InputPresenter(this);
+        sqLiteOpenHelper = new DbOpenHelper(this);
 
     }
 
@@ -63,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     public String getInputData() {
         return inputdate.getText().toString();
 
-        SQLiteOpenHelper sqLiteOpenHelper = new DbOpenHelper(this);
+
 
         //Получаем с помощью builder'а экземпляр StorIO
         mDefaultStorIOSQLite = DefaultStorIOSQLite.builder()

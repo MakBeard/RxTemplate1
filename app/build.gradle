@@ -34,7 +34,6 @@ dependencies {
 
     compile 'com.android.support:recyclerview-v7:24.0.0'
 
-    compile 'com.pushtorefresh.storio:sqlite:1.9.1'
 
     //Библиотеки для работы с основными компонентами StorIO
     compile 'com.pushtorefresh.storio:sqlite:1.9.1'
