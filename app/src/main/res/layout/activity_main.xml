@@ -10,7 +10,46 @@
     tools:context="com.jollydroid.rxtemplate1.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Введите значение" />
+
+    <EditText
+        android:layout_below="@id/textView"
+        android:id="@+id/inputtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@id/inputtext"
+        android:id="@+id/textdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите дату" />
+
+    <EditText
+        android:id="@+id/inputdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textdate"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Button
+        android:text="Сохранить"
+        android:id="@+id/savebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputdate"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/listbutton"
+        android:text="Открыть список"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/savebutton"
+        android:layout_toEndOf="@+id/savebutton" />
 </RelativeLayout>
