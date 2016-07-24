@@ -1,5 +1,6 @@
 package com.jollydroid.rxtemplate1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,11 +41,15 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     }
 
     @OnClick(R.id.savebutton)
-    public void onClick(View view) {
+    public void onClickSave(View view) {
         presenter.saveData();
         Log.d("something","Нажата кнопка сохранить");
     }
 
+    @OnClick(R.id.listbutton)
+    public void onClickList(View view) {
+        startActivity(new Intent(MainActivity.this,ListActivity.class));
+    }
 
     @Override
     public String getInputText() {
