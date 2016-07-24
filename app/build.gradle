@@ -35,4 +35,12 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.0.0'
 
     compile 'com.pushtorefresh.storio:sqlite:1.9.1'
+
+    //Библиотеки для работы с основными компонентами StorIO
+    compile 'com.pushtorefresh.storio:sqlite:1.9.1'
+    compile 'com.pushtorefresh.storio:sqlite-annotations:1.9.1'
+
+    //Процессор аннотаций для StorIO
+    // We recommend to use Android Gradle Apt plugin: https://bitbucket.org/hvisser/android-apt
+    apt 'com.pushtorefresh.storio:sqlite-annotations-processor:1.9.1'
 }
