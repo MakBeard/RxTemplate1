@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         //Получаем с помощью builder'а экземпляр StorIO
         mDefaultStorIOSQLite = DefaultStorIOSQLite.builder()
                 .sqliteOpenHelper(sqLiteOpenHelper)
+                //Класс XXXSQLiteTypeMapping генерируется автоматически, при наличии аннотаций
                 .addTypeMapping(DataModel.class, new DataModelSQLiteTypeMapping())
                 .build();
 
